@@ -16,6 +16,33 @@
     <!-- Favicon -->
     <link rel="icon" href="/favicon.ico" type="image/x-icon">
     
+    <!-- Affiliate Tracking -->
+    <script>
+        // Affiliate tracking for Australia market
+        const affiliateLinks = {
+            '888': 'https://track.888affiliates.com/click?pid=AUSSIE001&offer_id=12345',
+            'bet365': 'https://affiliates.bet365.com/tracking?affiliate=AUSSIE001&offer=casino',
+            'pokerstars': 'https://www.pokerstars.com/affiliate/tracking?id=AUSSIE001&campaign=casino',
+            'williamhill': 'https://affiliates.williamhill.com/track?aff=AUSSIE001&product=casino',
+            'betfair': 'https://affiliate.betfair.com/tracking?affiliate=AUSSIE001&channel=casino'
+        };
+        
+        function trackAffiliateClick(program) {
+            const link = affiliateLinks[program] || affiliateLinks['888'];
+            // Track click analytics
+            console.log('Affiliate click tracked:', program, 'for Australia market');
+            window.open(link, '_blank');
+            return false;
+        }
+        
+        function trackRegistration() {
+            // Track registration conversion
+            console.log('Registration tracked for Australia market');
+            window.location.href = affiliateLinks['888'];
+            return false;
+        }
+    </script>
+    
     <!-- Schema Markup -->
     <script type="application/ld+json">
     {
@@ -279,7 +306,7 @@
                 <li><a href="#bonuses">Bonuses</a></li>
                 <li><a href="#support">Support</a></li>
             </ul>
-            <a href="#register" class="cta-button">Join Now</a>
+            <a href="#register" class="cta-button" onclick="return trackRegistration();">Join Now</a>
         </nav>
     </header>
 
@@ -288,7 +315,7 @@
             <div class="container">
                 <h1>🇦🇺 G'day Mate! Welcome to Australia's Best Online Casino</h1>
                 <p>Fair dinkum Aussie gaming with AUD currency, local banking, and 24/7 support!</p>
-                <a href="#register" class="cta-button" style="font-size: 1.2rem; padding: 1rem 2rem;">Get Started - AU$1500 Bonus</a>
+                <a href="#register" class="cta-button" style="font-size: 1.2rem; padding: 1rem 2rem;" onclick="return trackRegistration();">Get Started - AU$1500 Bonus</a>
             </div>
         </section>
 
@@ -306,31 +333,37 @@
                             <div class="game-icon">🎰</div>
                             <h3>Aussie Pokies</h3>
                             <p>Play the best Australian pokies with progressive jackpots and bonus features</p>
+                            <a href="#" onclick="return trackAffiliateClick('888');" style="color: #FFD700; font-weight: bold;">Play Now →</a>
                         </div>
                         <div class="game-card">
                             <div class="game-icon">🃏</div>
                             <h3>Blackjack</h3>
                             <p>Classic 21 games with Australian variations and live dealers</p>
+                            <a href="#" onclick="return trackAffiliateClick('bet365');" style="color: #FFD700; font-weight: bold;">Play Now →</a>
                         </div>
                         <div class="game-card">
                             <div class="game-icon">🎡</div>
                             <h3>Roulette</h3>
                             <p>European, American, and Aussie-themed roulette tables</p>
+                            <a href="#" onclick="return trackAffiliateClick('pokerstars');" style="color: #FFD700; font-weight: bold;">Play Now →</a>
                         </div>
                         <div class="game-card">
                             <div class="game-icon">🎲</div>
                             <h3>Live Casino</h3>
                             <p>Real dealers, real action - play with Australian croupiers</p>
+                            <a href="#" onclick="return trackAffiliateClick('williamhill');" style="color: #FFD700; font-weight: bold;">Play Now →</a>
                         </div>
                         <div class="game-card">
                             <div class="game-icon">🎯</div>
                             <h3>Poker</h3>
                             <p>Texas Hold'em, Omaha, and Aussie Poker variations</p>
+                            <a href="#" onclick="return trackAffiliateClick('betfair');" style="color: #FFD700; font-weight: bold;">Play Now →</a>
                         </div>
                         <div class="game-card">
                             <div class="game-icon">🦘</div>
                             <h3>Aussie Specialties</h3>
                             <p>Keno, Bingo, and uniquely Australian games</p>
+                            <a href="#" onclick="return trackAffiliateClick('888');" style="color: #FFD700; font-weight: bold;">Play Now →</a>
                         </div>
                     </div>
                 </div>
